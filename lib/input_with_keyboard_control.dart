@@ -8,36 +8,30 @@ class InputWithKeyboardControl extends EditableText {
   final InputWithKeyboardControlFocusNode focusNode;
   final double width;
 
-  InputWithKeyboardControl({
-    @required TextEditingController controller,
-    TextStyle style = const TextStyle(color: Colors.black, fontSize: 18),
-    Color cursorColor = Colors.black,
-    bool autofocus = false,
-    Color selectionColor,
-    this.showKeyboard,
-    void Function(String) onSubmitted,
-    this.focusNode,
-    this.width
-  }):super(
-    controller: controller,
-    focusNode: focusNode,
-    style: style,
-    cursorColor: cursorColor,
-    autofocus: autofocus,
-    selectionColor: selectionColor,
-    backgroundCursorColor: Colors.black,
-    onSubmitted: onSubmitted
-  );
+  InputWithKeyboardControl(
+      {@required TextEditingController controller,
+      TextStyle style = const TextStyle(color: Colors.black, fontSize: 18),
+      Color cursorColor = Colors.black,
+      bool autofocus = false,
+      Color selectionColor,
+      this.showKeyboard,
+      void Function(String) onSubmitted,
+      this.focusNode,
+      this.width})
+      : super(
+            controller: controller,
+            focusNode: focusNode,
+            style: style,
+            cursorColor: cursorColor,
+            autofocus: autofocus,
+            selectionColor: selectionColor,
+            backgroundCursorColor: Colors.black,
+            onSubmitted: onSubmitted);
 
   @override
   EditableTextState createState() {
-    return InputWithKeyboardControlState(
-      showKeyboard,
-      focusNode,
-      width
-    );
+    return InputWithKeyboardControlState(showKeyboard, focusNode, width);
   }
-
 }
 
 class InputWithKeyboardControlState extends EditableTextState {
@@ -45,11 +39,7 @@ class InputWithKeyboardControlState extends EditableTextState {
   final InputWithKeyboardControlFocusNode focusNode;
   final double width;
 
-  InputWithKeyboardControlState(
-    this.showKeyboard,
-    this.focusNode,
-    this.width
-  );
+  InputWithKeyboardControlState(this.showKeyboard, this.focusNode, this.width);
 
   toggleShowKeyboard(bool value) {
     setState(() {
@@ -71,36 +61,33 @@ class InputWithKeyboardControlState extends EditableTextState {
     return Container(
         width: width,
         child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: width - (width / 10),
-            decoration: UnderlineTabIndicator(borderSide: BorderSide(color: Colors.black)),
-            child: widget
-          ),
-          InkWell(
-              onTap: () {
-                this.toggleShowKeyboard(showKeyboard);
-              },
-              child: Container(
-              width: (width / 10),
-              child: Icon(
-                Icons.keyboard,
-                color: showKeyboard ? Colors.blue : Colors.black,
-              ),
-            )
-          )
-        ],
-      )
-    );
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+                width: width - (width / 10),
+                decoration: UnderlineTabIndicator(
+                    borderSide: BorderSide(color: Colors.black)),
+                child: widget),
+            InkWell(
+                onTap: () {
+                  this.toggleShowKeyboard(showKeyboard);
+                },
+                child: Container(
+                  width: (width / 10),
+                  child: Icon(
+                    Icons.keyboard,
+                    color: showKeyboard ? Colors.blue : Colors.black,
+                  ),
+                ))
+          ],
+        ));
   }
 
   @override
   void requestKeyboard() {
     super.requestKeyboard();
-    
-    if (!showKeyboard)
-      SystemChannels.textInput.invokeMethod('TextInput.hide');
+
+    if (!showKeyboard) SystemChannels.textInput.invokeMethod('TextInput.hide');
   }
 }
 
