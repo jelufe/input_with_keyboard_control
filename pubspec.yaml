@@ -1,6 +1,6 @@
 name: input_with_keyboard_control
 description: The package provides an input that you can control whether the keyboard will show or not
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/jelufe/input_with_keyboard_control
 
 environment:
