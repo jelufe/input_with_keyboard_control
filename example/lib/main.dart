@@ -32,24 +32,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            InputWithKeyboardControl(
+              focusNode: InputWithKeyboardControlFocusNode(),
+              onSubmitted: (valor) {
+                print(valor);
+              },
+              autofocus: true,
+              controller: TextEditingController(),
+              width: 300,
+              startShowKeyboard: false,
+              buttonColorEnabled: Colors.blue,
+              buttonColorDisabled: Colors.black,
+              showUnderline: true,
+              showButton: true,
+            ),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              InputWithKeyboardControl(
-                  focusNode: InputWithKeyboardControlFocusNode(),
-                  onSubmitted: (valor) {
-                    print(valor);
-                  },
-                  autofocus: true,
-                  controller: TextEditingController(),
-                  width: 300,
-                  showKeyboard: false),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

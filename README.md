@@ -1,11 +1,11 @@
 # input_with_keyboard_control
 
 The package provides an input that you can control whether the keyboard will show or not 
-without losing focus
+without losing focus, ideal for use with a barcode scanner!
 
 ## Example
 <br />
-<img src="https://drive.google.com/u/1/uc?id=1eHJfap6W2hlmhEWGHtSVkQh5MSKZuNUk&export=download" width="220" height="400"/>
+<img src="https://drive.google.com/u/1/uc?id=1n77fXgLZJP0onLrT3tFE4HaQiwf5jFiF&export=download" width="210" height="380"/>
 <br /><br />
 
 ## Usage
@@ -27,13 +27,17 @@ import 'package:input_with_keyboard_control/input_with_keyboard_control.dart';
 
 ```dart
 InputWithKeyboardControl(
-    focusNode: InputWithKeyboardControlFocusNode(),
-    onSubmitted: (valor) {
-        print(valor);
-    },
-    autofocus: true,
-    controller: TextEditingController(),
-    width: 300,
-    showKeyboard: false
+  focusNode: InputWithKeyboardControlFocusNode(),
+  onSubmitted: (valor) {
+    print(valor);
+  },
+  autofocus: true,
+  controller: TextEditingController(),
+  width: 300,
+  startShowKeyboard: false,
+  buttonColorEnabled: Colors.blue,
+  buttonColorDisabled: Colors.black,
+  showUnderline: true,
+  showButton: true,
 )
 ```
