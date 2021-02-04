@@ -46,5 +46,5 @@ InputWithKeyboardControl(
 ```
 
 <br /><br />
-Thank you for using this package :heart:!
+Thank you for using this package :heart:
 <br /><br /><br />
