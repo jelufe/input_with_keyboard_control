@@ -1,3 +1,7 @@
+## [1.0.5] - 2021-02-04.
+
+* Changed example
+
 ## [1.0.4] - 2021-02-04.
 
 * Added underlineColor parameter

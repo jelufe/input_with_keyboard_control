@@ -1,6 +1,6 @@
 name: example
 description: The package provides an input that you can control whether the keyboard will show or not without losing focus, ideal for use with a barcode scanner!
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/jelufe/input_with_keyboard_control
 
 environment:
