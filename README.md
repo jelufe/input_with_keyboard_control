@@ -5,6 +5,8 @@ without losing focus, ideal for use with a barcode scanner!
 
 ## Example
 <br />
+Check example folder for code sample
+<br /><br />
 <img src="https://drive.google.com/u/1/uc?id=1n77fXgLZJP0onLrT3tFE4HaQiwf5jFiF&export=download" width="210" height="380"/>
 <br /><br />
 
@@ -42,3 +44,7 @@ InputWithKeyboardControl(
   showButton: true,
 )
 ```
+
+<br /><br />
+Thank you for using this package :heart:
+<br /><br /><br />

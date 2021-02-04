@@ -29,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(value);
               },
               autofocus: true,
-              controller: TextEditingController(),
+              controller: textEditingController,
               width: 300,
               startShowKeyboard: false,
               buttonColorEnabled: Colors.blue,

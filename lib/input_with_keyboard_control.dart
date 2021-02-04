@@ -4,37 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputWithKeyboardControl extends EditableText {
-
-  /// startShowKeyboard is initial value to show or not the keyboard when the widget is created
-  /// Default value is false
+  /// startShowKeyboard is initial value to show or not the keyboard when the widget is created, default value is false
   final bool startShowKeyboard;
 
-  /// focusNode is responsible for controlling the focus of the field
-  /// This parameter is required
+  /// focusNode is responsible for controlling the focus of the field, this parameter is required
   final InputWithKeyboardControlFocusNode focusNode;
 
-  /// width is responsible for set the widget size
-  /// This parameter is required
+  /// width is responsible for set the widget size, This parameter is required
   final double width;
 
-  /// buttonColorEnabled is responsible for set color in button when is enabled
-  /// Default value is Colors.blue
+  /// buttonColorEnabled is responsible for set color in button when is enabled, default value is Colors.blue
   final Color buttonColorEnabled;
 
-  /// buttonColorDisabled is responsible for set color in button when is disabled
-  /// Default value is Colors.black
+  /// buttonColorDisabled is responsible for set color in button when is disabled, default value is Colors.black
   final Color buttonColorDisabled;
 
-  /// underlineColor is responsible for set color in underline BorderSide
-  /// Default value is Colors.black
+  /// underlineColor is responsible for set color in underline BorderSide, default value is Colors.black
   final Color underlineColor;
 
-  /// showUnderline is responsible for showing or not the underline in the widget
-  /// Default value is true
+  /// showUnderline is responsible for showing or not the underline in the widget, default value is true
   final bool showUnderline;
 
-  /// showButton is responsible for showing or not the button to control the keyboard
-  /// Default value is true
+  /// showButton is responsible for showing or not the button to control the keyboard, default value is true
   final bool showButton;
 
   InputWithKeyboardControl({
@@ -78,37 +69,28 @@ class InputWithKeyboardControl extends EditableText {
 }
 
 class InputWithKeyboardControlState extends EditableTextState {
-  
-  /// showKeyboard is value responsible to show or not the keyboard
-  /// Default value is false
+  /// showKeyboard is initial value to show or not the keyboard when the widget is created, default value is false
   bool showKeyboard;
 
-  /// focusNode is responsible for controlling the focus of the field
-  /// This parameter is required
+  /// focusNode is responsible for controlling the focus of the field, this parameter is required
   final InputWithKeyboardControlFocusNode focusNode;
 
-  /// width is responsible for set the widget size
-  /// This parameter is required
+  /// width is responsible for set the widget size, This parameter is required
   final double width;
 
-  /// buttonColorEnabled is responsible for set color in button when is enabled
-  /// Default value is Colors.blue
+  /// buttonColorEnabled is responsible for set color in button when is enabled, default value is Colors.blue
   final Color buttonColorEnabled;
 
-  /// buttonColorDisabled is responsible for set color in button when is disabled
-  /// Default value is Colors.black
+  /// buttonColorDisabled is responsible for set color in button when is disabled, default value is Colors.black
   final Color buttonColorDisabled;
 
-  /// underlineColor is responsible for set color in underline BorderSide
-  /// Default value is Colors.black
+  /// underlineColor is responsible for set color in underline BorderSide, default value is Colors.black
   final Color underlineColor;
 
-  /// showUnderline is responsible for showing or not the underline in the widget
-  /// Default value is true
+  /// showUnderline is responsible for showing or not the underline in the widget, default value is true
   final bool showUnderline;
 
-  /// showButton is responsible for showing or not the button to control the keyboard
-  /// Default value is true
+  /// showButton is responsible for showing or not the button to control the keyboard, default value is true
   final bool showButton;
 
   InputWithKeyboardControlState(
