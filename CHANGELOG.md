@@ -1,3 +1,7 @@
+## [1.0.4] - 2021-02-04.
+
+* Added underlineColor parameter
+
 ## [1.0.3] - 2021-02-03.
 
 * Added buttonColorEnabled, buttonColorDisabled, showUnderline and showButton parameters

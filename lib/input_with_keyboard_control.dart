@@ -4,12 +4,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputWithKeyboardControl extends EditableText {
+
+  /// startShowKeyboard is initial value to show or not the keyboard when the widget is created
+  /// Default value is false
   final bool startShowKeyboard;
+
+  /// focusNode is responsible for controlling the focus of the field
+  /// This parameter is required
   final InputWithKeyboardControlFocusNode focusNode;
+
+  /// width is responsible for set the widget size
+  /// This parameter is required
   final double width;
+
+  /// buttonColorEnabled is responsible for set color in button when is enabled
+  /// Default value is Colors.blue
   final Color buttonColorEnabled;
+
+  /// buttonColorDisabled is responsible for set color in button when is disabled
+  /// Default value is Colors.black
   final Color buttonColorDisabled;
+
+  /// underlineColor is responsible for set color in underline BorderSide
+  /// Default value is Colors.black
+  final Color underlineColor;
+
+  /// showUnderline is responsible for showing or not the underline in the widget
+  /// Default value is true
   final bool showUnderline;
+
+  /// showButton is responsible for showing or not the button to control the keyboard
+  /// Default value is true
   final bool showButton;
 
   InputWithKeyboardControl({
@@ -24,6 +49,7 @@ class InputWithKeyboardControl extends EditableText {
     @required this.width,
     this.buttonColorEnabled = Colors.blue,
     this.buttonColorDisabled = Colors.black,
+    this.underlineColor = Colors.black,
     this.showUnderline = true,
     this.showButton = true,
   }) : super(
@@ -39,18 +65,50 @@ class InputWithKeyboardControl extends EditableText {
 
   @override
   EditableTextState createState() {
-    return InputWithKeyboardControlState(startShowKeyboard, focusNode, width,
-        buttonColorEnabled, buttonColorDisabled, showUnderline, showButton);
+    return InputWithKeyboardControlState(
+        startShowKeyboard,
+        focusNode,
+        width,
+        buttonColorEnabled,
+        buttonColorDisabled,
+        underlineColor,
+        showUnderline,
+        showButton);
   }
 }
 
 class InputWithKeyboardControlState extends EditableTextState {
+  
+  /// showKeyboard is value responsible to show or not the keyboard
+  /// Default value is false
   bool showKeyboard;
+
+  /// focusNode is responsible for controlling the focus of the field
+  /// This parameter is required
   final InputWithKeyboardControlFocusNode focusNode;
+
+  /// width is responsible for set the widget size
+  /// This parameter is required
   final double width;
+
+  /// buttonColorEnabled is responsible for set color in button when is enabled
+  /// Default value is Colors.blue
   final Color buttonColorEnabled;
+
+  /// buttonColorDisabled is responsible for set color in button when is disabled
+  /// Default value is Colors.black
   final Color buttonColorDisabled;
+
+  /// underlineColor is responsible for set color in underline BorderSide
+  /// Default value is Colors.black
+  final Color underlineColor;
+
+  /// showUnderline is responsible for showing or not the underline in the widget
+  /// Default value is true
   final bool showUnderline;
+
+  /// showButton is responsible for showing or not the button to control the keyboard
+  /// Default value is true
   final bool showButton;
 
   InputWithKeyboardControlState(
@@ -59,6 +117,7 @@ class InputWithKeyboardControlState extends EditableTextState {
       this.width,
       this.buttonColorEnabled,
       this.buttonColorDisabled,
+      this.underlineColor,
       this.showUnderline,
       this.showButton);
 
@@ -88,7 +147,7 @@ class InputWithKeyboardControlState extends EditableTextState {
               width: showButton ? (width - (width / 9)) : width,
               decoration: showUnderline
                   ? UnderlineTabIndicator(
-                      borderSide: BorderSide(color: Colors.black))
+                      borderSide: BorderSide(color: underlineColor))
                   : null,
               child: widget),
           showButton

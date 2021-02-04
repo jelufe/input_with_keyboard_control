@@ -41,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             InputWithKeyboardControl(
               focusNode: InputWithKeyboardControlFocusNode(),
-              onSubmitted: (valor) {
-                print(valor);
+              onSubmitted: (value) {
+                print(value);
               },
               autofocus: true,
               controller: TextEditingController(),
@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               startShowKeyboard: false,
               buttonColorEnabled: Colors.blue,
               buttonColorDisabled: Colors.black,
+              underlineColor: Colors.black,
               showUnderline: true,
               showButton: true,
             ),

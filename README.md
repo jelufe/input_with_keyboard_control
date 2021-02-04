@@ -28,8 +28,8 @@ import 'package:input_with_keyboard_control/input_with_keyboard_control.dart';
 ```dart
 InputWithKeyboardControl(
   focusNode: InputWithKeyboardControlFocusNode(),
-  onSubmitted: (valor) {
-    print(valor);
+  onSubmitted: (value) {
+    print(value);
   },
   autofocus: true,
   controller: TextEditingController(),
@@ -37,6 +37,7 @@ InputWithKeyboardControl(
   startShowKeyboard: false,
   buttonColorEnabled: Colors.blue,
   buttonColorDisabled: Colors.black,
+  underlineColor: Colors.black,
   showUnderline: true,
   showButton: true,
 )
