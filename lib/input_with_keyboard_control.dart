@@ -93,6 +93,25 @@ class InputWithKeyboardControlState extends EditableTextState {
   /// showButton is responsible for showing or not the button to control the keyboard, default value is true
   final bool showButton;
 
+  // funcionListener is responsible for controller focusNode listener
+  Function funcionListener;
+
+  @override
+  void initState() {
+    funcionListener = () {
+      if (focusNode.hasFocus) requestKeyboard();
+    };
+
+    focusNode.addListener(funcionListener);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    focusNode.removeListener(funcionListener);
+    super.dispose();
+  }
+
   InputWithKeyboardControlState(
       this.showKeyboard,
       this.focusNode,
@@ -110,10 +129,10 @@ class InputWithKeyboardControlState extends EditableTextState {
 
     if (!showKeyboard) {
       SystemChannels.textInput.invokeMethod('TextInput.hide');
-      FocusScope.of(context).requestFocus(focusNode);
+      focusNode.requestFocus();
     } else {
       SystemChannels.textInput.invokeMethod('TextInput.show');
-      FocusScope.of(context).requestFocus(focusNode);
+      focusNode.requestFocus();
     }
   }
 
