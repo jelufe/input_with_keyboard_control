@@ -138,29 +138,34 @@ class InputWithKeyboardControlState extends EditableTextState {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     Widget widget = super.build(context);
     return Container(
       width: width,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-              width: showButton ? (width - (width / 9)) : width,
-              decoration: showUnderline
-                  ? UnderlineTabIndicator(
-                      borderSide: BorderSide(color: underlineColor))
-                  : null,
-              child: widget),
-          showButton
-              ? Row(
-                  children: [
-                    SizedBox(width: (width / 9) / 2),
-                    InkWell(
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Container(
+                  decoration: showUnderline
+                      ? UnderlineTabIndicator(
+                          borderSide: BorderSide(color: underlineColor),
+                        )
+                      : null,
+                  child: widget),
+            ),
+            SizedBox(
+              width: size.width * 0.01,
+            ),
+            showButton
+                ? Container(
+                    child: InkWell(
                       onTap: () {
                         this.toggleShowKeyboard(showKeyboard);
                       },
                       child: Container(
-                        width: (width / 9) / 2,
                         child: Icon(
                           Icons.keyboard,
                           color: showKeyboard
@@ -169,10 +174,10 @@ class InputWithKeyboardControlState extends EditableTextState {
                         ),
                       ),
                     ),
-                  ],
-                )
-              : Container(),
-        ],
+                  )
+                : Container(),
+          ],
+        ),
       ),
     );
   }
