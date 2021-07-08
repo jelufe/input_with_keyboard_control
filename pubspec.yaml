@@ -1,10 +1,10 @@
 name: input_with_keyboard_control
 description: The package provides an input that you can control whether the keyboard will show or not without losing focus, ideal for use with a barcode scanner!
-version: 1.0.7
+version: 1.0.8
 homepage: https://github.com/jelufe/input_with_keyboard_control
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:

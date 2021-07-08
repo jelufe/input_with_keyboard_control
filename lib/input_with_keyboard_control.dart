@@ -29,15 +29,15 @@ class InputWithKeyboardControl extends EditableText {
   final bool showButton;
 
   InputWithKeyboardControl({
-    @required TextEditingController controller,
+    required TextEditingController controller,
     TextStyle style = const TextStyle(color: Colors.black, fontSize: 18),
     Color cursorColor = Colors.black,
     bool autofocus = false,
-    Color selectionColor,
+    Color? selectionColor,
     this.startShowKeyboard = false,
-    void Function(String) onSubmitted,
-    @required this.focusNode,
-    @required this.width,
+    void Function(String)? onSubmitted,
+    required this.focusNode,
+    required this.width,
     this.buttonColorEnabled = Colors.blue,
     this.buttonColorDisabled = Colors.black,
     this.underlineColor = Colors.black,
@@ -94,7 +94,7 @@ class InputWithKeyboardControlState extends EditableTextState {
   final bool showButton;
 
   // funcionListener is responsible for controller focusNode listener
-  Function funcionListener;
+  late Function funcionListener;
 
   @override
   void initState() {
@@ -102,13 +102,13 @@ class InputWithKeyboardControlState extends EditableTextState {
       if (focusNode.hasFocus) requestKeyboard();
     };
 
-    focusNode.addListener(funcionListener);
+    focusNode.addListener(funcionListener as void Function());
     super.initState();
   }
 
   @override
   void dispose() {
-    focusNode.removeListener(funcionListener);
+    focusNode.removeListener(funcionListener as void Function());
     super.dispose();
   }
 

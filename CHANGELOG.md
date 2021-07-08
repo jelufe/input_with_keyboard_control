@@ -1,3 +1,7 @@
+## [1.0.8] - 2021-07-18.
+
+* Added null safety support
+
 ## [1.0.7] - 2021-02-17.
 
 * Fixed size button bug
